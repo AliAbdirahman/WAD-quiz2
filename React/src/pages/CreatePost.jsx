@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 
 const CreatePost = () => {
-  const [name, setName] = useState(null);
-  const [alias, setAlias] = useState(null);
+  const [name, setName] = useState('');
+  const [alias, setAlias] = useState('');
 
-  const handleInputChange = (e) => {
-    const {id , value} = e.target;
+  const handleInputChange = (chng) => {
+    const {id , value} = chng.target;
     if(id === "name"){
         setName(value);
     }
@@ -40,11 +40,11 @@ const handleSubmit  = () => {
         <div className="post">
               <div className="name">
                   <label className="hero_label" for="name">Name </label>
-                  <input className="hero_input" type="text" id="name" placeholder="Name" onChange = {(e) => handleInputChange(e)}/>
+                  <input className="hero_input" type="text" id="name" placeholder="Name" onChange = {(chng) => handleInputChange(chng)}/>
               </div>
               <div className="alias">
                   <label className="hero_label" for="alias">Alias </label>
-                  <input className="hero_input" type="text" name="" id="alias" placeholder="Alias" onChange = {(e) => handleInputChange(e)}/>
+                  <input className="hero_input" type="text" name="" id="alias" placeholder="Alias" onChange = {(chng) => handleInputChange(chng)}/>
               </div>
           </div>
           <div className="button"><button onClick={()=>handleSubmit()} type="submit" class="btn">Submit</button></div>
